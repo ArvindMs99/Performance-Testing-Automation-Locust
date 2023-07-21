@@ -15,7 +15,7 @@ pipeline {
         stage('TEST') {
             steps {
                 echo 'TESTED'
-                locust
+                bat "locust"
             }
         }
         stage('RELEASE') {
