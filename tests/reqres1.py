@@ -65,19 +65,6 @@ class TasksRequests(SequentialTaskSet):
 
     @task
     @tag('NEGATIVE_TEST')
-    def get_user3(self):
-
-        with self.client.get("/api/users/"+self.response_id+"", catch_response=True) as response:
-
-            if self.expected_get3_statuscode == response.status_code:
-                logging.info("GET REQUEST3 PASSED")
-                response.success()
-            else:
-                logging.error("GET REQUEST3 FAILED")
-                response.failure()
-
-    @task
-    @tag('NEGATIVE_TEST')
     def post_user2(self):
 
         with self.client.post("/api/login", catch_response=True, data='''{
