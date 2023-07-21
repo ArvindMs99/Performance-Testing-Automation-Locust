@@ -14,8 +14,8 @@ pipeline {
         }
         stage('TEST') {
             steps {
+                bat 'locust'
                 echo 'TESTED'
-                bat "locust"
             }
         }
         stage('RELEASE') {
